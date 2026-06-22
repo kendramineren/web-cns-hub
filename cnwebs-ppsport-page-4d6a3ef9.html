@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PP体育 · 简明指南与访问提醒</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background: #fafafa;
+            font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            color: #1e293b;
+            line-height: 1.7;
+            padding: 2rem 1.2rem;
+        }
+
+        .page {
+            max-width: 720px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 28px;
+            box-shadow: 0 12px 40px rgba(0, 0, 0, 0.04);
+            padding: 2.8rem 1.8rem;
+        }
+
+        @media (min-width: 560px) {
+            .page {
+                padding: 3.6rem 3rem;
+            }
+        }
+
+        .hero {
+            margin-bottom: 2.8rem;
+            border-bottom: 1px solid #e9edf2;
+            padding-bottom: 2.2rem;
+        }
+
+        .hero h1 {
+            font-size: 2.2rem;
+            font-weight: 600;
+            letter-spacing: -0.01em;
+            color: #0f172a;
+            margin-bottom: 0.6rem;
+            line-height: 1.2;
+        }
+
+        .hero .subhead {
+            font-size: 1.05rem;
+            color: #475569;
+            margin-bottom: 0.2rem;
+        }
+
+        .hero .meta {
+            font-size: 0.85rem;
+            color: #94a3b8;
+            margin-top: 0.5rem;
+            border-left: 3px solid #d0d9e4;
+            padding-left: 0.8rem;
+        }
+
+        .section-title {
+            font-size: 1.25rem;
+            font-weight: 600;
+            margin: 2.4rem 0 1rem 0;
+            color: #0f172a;
+            letter-spacing: -0.3px;
+            display: flex;
+            align-items: center;
+            gap: 0.3rem;
+        }
+
+        .section-title::before {
+            content: "▹";
+            color: #5b6d89;
+            font-size: 1.1rem;
+            margin-right: 0.2rem;
+        }
+
+        .card-grid {
+            display: flex;
+            flex-direction: column;
+            gap: 1.2rem;
+            margin: 1.4rem 0;
+        }
+
+        .card {
+            background: #f8fafc;
+            border-radius: 20px;
+            padding: 1.5rem 1.5rem 1.6rem;
+            border: 1px solid #eef2f6;
+            transition: 0.15s ease;
+        }
+
+        .card:hover {
+            border-color: #cdd5df;
+            background: #f5f8fc;
+        }
+
+        .card h3 {
+            font-size: 1.1rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+            color: #1e293b;
+        }
+
+        .card p {
+            color: #334155;
+            font-size: 0.98rem;
+        }
+
+        .audience-list {
+            list-style: none;
+            padding: 0;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.75rem 0.5rem;
+            margin: 1rem 0 0.5rem;
+        }
+
+        .audience-list li {
+            background: #eef2f6;
+            padding: 0.25rem 1rem;
+            border-radius: 40px;
+            font-size: 0.88rem;
+            color: #1e293b;
+            border: 1px solid #dee4ec;
+        }
+
+        .intro-text {
+            margin: 1.6rem 0 2rem;
+            background: #f2f5f9;
+            padding: 1.6rem 1.6rem 1.8rem;
+            border-radius: 20px;
+        }
+
+        .intro-text p {
+            margin-bottom: 1rem;
+        }
+
+        .intro-text p:last-child {
+            margin-bottom: 0;
+        }
+
+        .link-sentence {
+            background: white;
+            padding: 1.4rem 1.6rem;
+            border-radius: 20px;
+            border: 1px solid #e2e8f0;
+            margin: 2rem 0 1.2rem;
+            text-align: left;
+        }
+
+        .link-sentence p {
+            font-size: 1.04rem;
+            color: #1e293b;
+        }
+
+        .faq-mini {
+            margin-top: 2.6rem;
+            padding-top: 1.8rem;
+            border-top: 1px solid #e2e8f0;
+        }
+
+        .faq-mini details {
+            margin-bottom: 0.9rem;
+            border-bottom: 1px dashed #e2e8f0;
+            padding-bottom: 0.7rem;
+        }
+
+        .faq-mini summary {
+            font-weight: 500;
+            cursor: pointer;
+            color: #1e293b;
+            padding: 0.2rem 0;
+            font-size: 0.98rem;
+        }
+
+        .faq-mini summary::marker {
+            color: #5b6d89;
+        }
+
+        .faq-mini details p {
+            margin-top: 0.6rem;
+            color: #475569;
+            font-size: 0.92rem;
+            padding-left: 0.5rem;
+            border-left: 2px solid #d0d9e4;
+            padding-left: 1rem;
+        }
+
+        a {
+            color: #1e4976;
+            text-decoration: none;
+            font-weight: 500;
+            border-bottom: 1.5px solid transparent;
+            transition: border-color 0.15s;
+        }
+
+        a:hover {
+            border-bottom-color: #1e4976;
+        }
+
+        .footer-note {
+            margin-top: 2.6rem;
+            font-size: 0.82rem;
+            color: #94a3b8;
+            text-align: center;
+        }
+
+        .dot-sep {
+            margin: 0 0.4rem;
+        }
+
+        @media (max-width: 420px) {
+            .hero h1 {
+                font-size: 1.8rem;
+            }
+            .page {
+                padding: 1.8rem 1.2rem;
+            }
+            .card {
+                padding: 1.2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="page">
+        <!-- hero -->
+        <div class="hero">
+            <h1>PP体育 · 简明指南</h1>
+            <div class="subhead">关于平台用途、适合人群与访问提醒</div>
+            <div class="meta">信息卡片式整理 · 2025年4月</div>
+        </div>
+
+        <!-- 主视觉 / 简明介绍 -->
+        <div class="intro-text">
+            <p><strong>PP体育</strong> 是一个以体育赛事直播、回放及资讯聚合为主的网络平台。用户可以通过它观看足球、篮球、网球等主流体育项目的比赛，并获取赛程、积分榜等实时数据。本页面从实用角度出发，整理平台的主要用途、适用场景以及访问时需要注意的要点，帮助你更清晰地了解和使用。</p>
+            <p>无论你是日常关注五大联赛，还是偶尔追一场焦点对决，了解平台的基本结构和访问习惯，能让体验更顺畅。</p>
+        </div>
+
+        <!-- 用途卡片 (信息卡片式) -->
+        <div class="section-title">主要用途</div>
+        <div class="card-grid">
+            <div class="card">
+                <h3>⚽ 赛事直播与回放</h3>
+                <p>覆盖国内外足球联赛、杯赛及部分篮球、网球赛事。提供多路信号选择，支持赛后回放与精彩片段集锦。</p>
+            </div>
+            <div class="card">
+                <h3>📊 数据与资讯</h3>
+                <p>实时比分、积分榜、射手榜、球队阵容等基础数据一应俱全。资讯板块更新赛前分析与赛后报道。</p>
+            </div>
+            <div class="card">
+                <h3>📱 多端适配</h3>
+                <p>支持桌面网页、移动浏览器及部分智能设备。界面针对不同屏幕做了基础响应式布局，方便随时查看。</p>
+            </div>
+        </div>
+
+        <!-- 适合人群 -->
+        <div class="section-title">适合人群</div>
+        <ul class="audience-list">
+            <li>体育赛事爱好者</li>
+            <li>关注五大联赛 &amp; 欧冠的球迷</li>
+            <li>需要快速查询赛果与积分的用户</li>
+            <li>赛前赛后浏览资讯的轻度用户</li>
+            <li>通过电脑或手机观看直播的观众</li>
+        </ul>
+        <p style="margin-top: 0.7rem; color: #475569; font-size: 0.95rem;">以上场景均可在 <a href="https://cnwebs-ppsport.com">pp体育</a> 中找到对应功能，根据个人需求选择性使用即可。</p>
+
+        <!-- 自然链接段落 (嵌入句子) -->
+        <div class="link-sentence">
+            <p>如果你希望直接访问体育内容聚合页面，<a href="https://cnwebs-ppsport.com">pp体育</a> 是较为直接的入口。该平台整合了直播链接、图文资讯和基础数据模块，适合作为日常关注体育动态的参考站点之一。建议在稳定的网络环境下使用，以获得较好的加载体验。</p>
+        </div>
+
+        <!-- 访问提醒 / 提示 (自然、不夸张) -->
+        <div class="section-title">访问提醒</div>
+        <div style="background: #fafbfc; border-radius: 20px; padding: 1.2rem 1.5rem; border: 1px solid #e9edf2; margin-bottom: 0.8rem;">
+            <ul style="padding-left: 1.3rem; color: #334155; list-style-type: disc; line-height: 1.9;">
+                <li>部分直播或回放可能因版权或地区限制而无法播放，请以实际页面显示为准。</li>
+                <li>平台界面及内容由运营方维护，页面布局或功能可能不定期调整。</li>
+                <li>建议使用主流浏览器（Chrome、Edge、Safari 最新版本）访问，避免兼容性问题。</li>
+                <li>注意辨别第三方链接与广告，避免点击来源不明的跳转。</li>
+            </ul>
+        </div>
+
+        <!-- FAQ 摘要 (精简) -->
+        <div class="faq-mini">
+            <div class="section-title">常见问题摘要</div>
+            <details>
+                <summary>是否需要注册账号才能观看？</summary>
+                <p>部分直播内容可能无需登录即可观看，但完整功能（如收藏、评论、个性化推荐）通常需要注册账号。具体以平台实际规则为准。</p>
+            </details>
+            <details>
+                <summary>移动端体验如何？</summary>
+                <p>移动浏览器适配良好，页面可缩放，菜单折叠后节省屏幕空间。但个别复杂数据表格在小屏下需横向滑动。</p>
+            </details>
+            <details>
+                <summary>内容更新速度怎么样？</summary>
+                <p>赛事比分更新较快，资讯类内容有一定延迟。重大比赛结束后通常半小时内会有图文报道。</p>
+            </details>
+            <details>
+                <summary>是否有收费项目？</summary>
+                <p>平台包含免费内容与部分付费赛事/会员服务，具体付费项目会在页面明确标注，请按需选择。</p>
+            </details>
+        </div>
+
+        <!-- 底部 -->
+        <div class="footer-note">
+            <span>信息整理 · 仅供参考</span>
+            <span class="dot-sep">·</span>
+            <span>具体以 <a href="https://cnwebs-ppsport.com" style="border-bottom: 1px dotted #94a3b8;">pp体育</a> 实际页面为准</span>
+        </div>
+    </div>
+</body>
+</html>
